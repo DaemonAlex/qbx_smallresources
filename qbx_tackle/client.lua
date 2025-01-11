@@ -4,6 +4,7 @@ lib.addKeybind({
     defaultKey = 'E',
     onReleased = function(self)
         if cache.vehicle then return end
+        if not QBX.PlayerData or not QBX.PlayerData.metadata then return end
         if QBX.PlayerData.metadata.ishandcuffed then return end
         if IsPedSprinting(cache.ped) or IsPedRunning(cache.ped) then
             local coords = GetEntityCoords(cache.ped)
